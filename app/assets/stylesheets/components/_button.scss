@@ -1,13 +1,11 @@
-.btn-entrar {
+.btn-entrar, .btn-registrar {
   display: inline-block;
-  color: rgb(3, 3, 3);
-  padding: 5px 20px;
+  color: rgb(7, 6, 6);
+  padding: 7px 24px;
   border-radius: 5px;
-  background: #6AD58B;
+  background-color: #BFD2F7;
   transition:  0.3s;
-  font-weight: bold;
   &:hover {
-    background: #0EC247;
-    transition:  0.3s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
 }
