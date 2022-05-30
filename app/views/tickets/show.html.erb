@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Breakfast
+  </div>
+  <div class="row">
+    <div class="card">
+      <h1><%= @ticket.event_name %></h1>
+      <h2>R$ <%= @ticket.event_price %></h2>
+      <h3>Data: <%= @ticket.event_date %></h3>
+      <% if user_signed_in? %>
+        <%= link_to 'Buy Ticket', new_ticket_order_path(@ticket), class: 'btn btn-outline-dark' %>
+      <% end %>
+    </div>
+  </div>
+</div>

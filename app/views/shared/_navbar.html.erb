@@ -1,6 +1,6 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-cambista">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand mx-5" do %>
       <%= image_tag "logo.png" %>
     <% end %>
 
@@ -20,7 +20,7 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Registrar", new_user_registration_path, class: "btn btn-outline-dark" %>
+            <%= link_to "Registrar", new_user_registration_path, class: "btn btn-outline-dark mx-2" %>
           </li>
            <li class="nav-item">
             <%= link_to "Entrar", new_user_session_path, class: "btn btn-outline-dark" %>
