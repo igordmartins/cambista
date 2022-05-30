@@ -1,0 +1,8 @@
+<h1>Ingressos disponíveis</h1>
+
+<% @tickets.each do |ticket| %>
+  <%= ticket.user.name %>
+  <%= ticket.event_name %>
+  <%= ticket.event_price %>
+  <%= ticket.event_date %>
+<% end %>
