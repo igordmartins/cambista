@@ -24,6 +24,10 @@ class TicketsController < ApplicationController
     redirect_to tickets_path(@ticket)
   end
 
+  def show
+    @ticket = Ticket.find(params[:id])
+  end
+
   private
 
   def ticket_params
