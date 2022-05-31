@@ -1,7 +1,13 @@
-<div class="container px-5 w-50">
-  <h2 class="ml-5 my-5">Vender um ingresso</h2>
+<div class="container col-md-12 text-center mt-4">
+
+  <h2>Estamos quase finalizando sua compra...</h2>
+
   <%= simple_form_for [@ticket, @order] do |f| %>
+  <div class="form-inputs mt-4 col-md-6 offset-md-3">
     <%= f.input :credcard, label: 'Cartão de crédito' %>
-    <%= f.button :submit, 'Comprar!', class: 'btn btn-success w-100' %>
+      <div class="form-actions">
+        <%= f.button :submit, 'Comprar!', class: 'btn-registrar' %>
+      </div>
+  </div>
   <% end %>
 </div>
