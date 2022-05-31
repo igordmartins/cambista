@@ -2,21 +2,23 @@
   <h1 class="text-center">Ingressos disponíveis</h1>
 
   <div class="container mt-4 text-end mb-5">
-    <%= link_to "Venda seu ingresso", new_ticket_path, class: "btn btn-outline-dark" %>
+    <%= link_to "Venda seu ingresso", new_ticket_path, class: "btn btn-registrar-navbar" %>
   </div>
   <div class="cards">
     <% if @tickets.length > 0 %>
       <% @tickets.each do |ticket| %>
-        <div class="card-ticket">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-ticket-infos">
-            <div>
-              <h2><%= ticket.event_name %></h2>
-              <p><strong>Vendido por:</strong> <%= ticket.user.name %> <strong>Data do evento:</strong> <%= ticket.event_date %></p>
+        <%= link_to ticket_path(ticket), class: "text-decoration-none" do %>
+          <div class="card-ticket">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+            <div class="card-ticket-infos">
+              <div>
+                <h2><%= ticket.event_name %></h2>
+                <p><strong>Vendido por:</strong> <%= ticket.user.name %> <strong>Data do evento:</strong> <%= ticket.event_date %></p>
+              </div>
+              <h2 class="card-ticket-pricing"><i class="fas fa-dollar-sign"><%= ticket.event_price %></i></h2>
             </div>
-            <h2 class="card-ticket-pricing"><i class="fas fa-dollar-sign"><%= ticket.event_price %></i></h2>
-          </div>
         </div>
+        <% end %>
       <% end %>
     <% else %>
       <p>Nao há ingressos disponíveis para venda</p>
