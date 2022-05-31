@@ -16,8 +16,6 @@ Ticket.create!(user: user2, event_price: 229.99, event_name: "Evento de testes3"
 Ticket.create!(user: user2, event_price: 339.99, event_name: "Evento de testes4", event_date: DateTime.now)
 Ticket.create!(user: user2, event_price: 459.99, event_name: "Evento de testes5", event_date: DateTime.now)
 
-
-
 tickets = Ticket.all
 
 tickets.each do |ticket|
