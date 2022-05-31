@@ -1,0 +1,13 @@
+<div class="cotainer">
+  <% @orders.each do |order| %>
+    <div class="card-product">
+      <%= image_tag 'afterlife.jpg' %>
+      <div class="content">
+        <div class="description">
+          <h3><%= order.ticket.event_name %></h3>
+          <p><%= order.ticket.description %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
