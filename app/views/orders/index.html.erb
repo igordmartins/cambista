@@ -1,10 +1,13 @@
-<div class="cotainer">
+<div class="container ">
   <% @orders.each do |order| %>
     <div class="card-product">
       <%= image_tag 'afterlife.jpg' %>
       <div class="content">
         <div class="description">
-          <h3><%= order.ticket.event_name %></h3>
+          <div class="d-flex justify-content-between">
+            <h3><%= order.ticket.event_name %></h3>
+            <h3>Data: <%= order.ticket.event_date %></h3>
+          </div>
           <p><%= order.ticket.description %></p>
         </div>
       </div>
