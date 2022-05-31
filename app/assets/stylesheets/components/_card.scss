@@ -7,7 +7,7 @@
 .card-ticket {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 100%;
   color: black;
 }
@@ -26,10 +26,9 @@
 
 .card-ticket p {
   font-size: 12px;
-  opacity: .7;
+  opacity: 0.7;
   margin: 0;
 }
-
 
 .card-ticket .card-ticket-infos {
   padding: 16px;
@@ -37,4 +36,37 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+.card-product {
+  margin-top: 20px;
+  background-color: #fff;
+  width: 500px;
+  height: 120px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgb(0, 0, 0);
+  overflow: hidden;
+
+  .content {
+    padding: 10px;
+  }
+
+  img {
+    width: 180px;
+  }
+
+  h3 {
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-bottom: 5px;
+  }
+
+  p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    color: rgba(77, 75, 75, 0.932);
+  }
 }
