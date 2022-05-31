@@ -9,7 +9,7 @@
       <% @tickets.each do |ticket| %>
         <%= link_to ticket_path(ticket), class: "text-decoration-none" do %>
           <div class="card-ticket">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <%= image_tag (ticket.photo.attached? ? cl_image_path(ticket.photo.key, crop: :thumb) : asset_path("blank.png")) %>
             <div class="card-ticket-infos">
               <div>
                 <h2><%= ticket.event_name %></h2>

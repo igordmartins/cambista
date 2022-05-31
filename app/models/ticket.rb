@@ -5,5 +5,4 @@ class Ticket < ApplicationRecord
   validates :event_name, presence: true
   validates :event_price, presence: true
   validates :event_date, presence: true
-  validates :description, presence: true
 end
