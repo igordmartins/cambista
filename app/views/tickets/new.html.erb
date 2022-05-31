@@ -1,10 +1,12 @@
 <div class="container px-5 w-50">
   <h2 class="ml-5 my-5">Vender um ingresso</h2>
   <%= simple_form_for @ticket do |f| %>
-    <%= f.input :event_name %>
-    <%= f.input :event_price %>
-    <%= f.input :description, as: :text, :input_html => { :cols => 5, :rows => 5 } %>
-    <%= f.input :event_date %>
-    <%= f.button :submit, 'Venda seu ingresso!', class: 'btn btn btn-registrar-navbar w-50 center-text' %>
+  <div class="row">
+     <div class="col-6"> <%= f.input :event_name %> </div>
+      <div class="col-6"><%= f.input :event_price %></div>
+      <%= f.input :description, as: :text, :input_html => { :cols => 5, :rows => 5 } %>
+      <%= f.input :event_date %>
+      <%= f.button :submit, 'Venda seu ingresso!', class: 'btn btn btn-registrar-navbar w-100 mx-auto mt-3' %>
+    </div>
   <% end %>
 </div>
