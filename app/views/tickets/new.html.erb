@@ -3,7 +3,8 @@
   <%= simple_form_for @ticket do |f| %>
     <%= f.input :event_name %>
     <%= f.input :event_price %>
+    <%= f.input :description, as: :text, :input_html => { :cols => 5, :rows => 5 } %>
     <%= f.input :event_date %>
-    <%= f.button :submit, 'Venda seu ingresso!', class: 'btn btn btn-registrar-navbar w-50' %>
+    <%= f.button :submit, 'Venda seu ingresso!', class: 'btn btn btn-registrar-navbar w-50 center-text' %>
   <% end %>
 </div>
