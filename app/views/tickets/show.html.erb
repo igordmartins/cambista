@@ -10,7 +10,7 @@
   <h2 class="mb-3">R$ <%= @ticket.event_price %></h2>
   <div >
     <% if user_signed_in? %>
-      <%= link_to 'Buy Ticket', new_ticket_order_path(@ticket), class: 'btn btn-outline-dark' %>
+      <%= link_to 'Buy Ticket', new_ticket_order_path(@ticket), class: 'btn btn btn-registrar-navbar' %>
     <% end %>
   </div>
 </div>

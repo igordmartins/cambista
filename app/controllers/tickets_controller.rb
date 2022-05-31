@@ -8,9 +8,8 @@ class TicketsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
     @ticket = Ticket.new(ticket_params)
-    @ticket.user = @user
+    @ticket.user = current_user
     if @ticket.save
       redirect_to tickets_path(@ticket)
     else
