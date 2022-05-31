@@ -1,15 +1,22 @@
 class TicketsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
-    @tickets = Ticket.all
+    @tickets = policy_scope(Ticket).order(created_at: :desc)
+    authorize @tickets
   end
 
   def new
     @ticket = Ticket.new
+    authorize @ticket
   end
 
   def create
     @ticket = Ticket.new(ticket_params)
     @ticket.user = current_user
+
+    authorize @ticket
+
     if @ticket.save
       redirect_to tickets_path(@ticket)
     else
@@ -25,6 +32,7 @@ class TicketsController < ApplicationController
 
   def show
     @ticket = Ticket.find(params[:id])
+    authorize @ticket
   end
 
   private
