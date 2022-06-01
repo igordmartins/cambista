@@ -1,6 +1,5 @@
-<div class="banner-ticket" >
-</div>
-<div class="container content-page">
+<%= image_tag (@ticket.photo.attached? ? cl_image_path(@ticket.photo.key, crop: :thumb) : asset_path("blank.png")), class: "banner-ticket" %>
+<div class="container content-page mt-3">
   <div class="d-flex justify-content-between mb-5">
     <h1><%= @ticket.event_name %></h1>
     <h3>Data: <%= @ticket.event_date %></h3>

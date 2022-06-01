@@ -15,7 +15,7 @@
                 <h2><%= ticket.event_name %></h2>
                 <p><strong>Vendido por:</strong> <%= ticket.user.name %> <strong>Data do evento:</strong> <%= ticket.event_date %></p>
               </div>
-              <h2 class="card-ticket-pricing"><i class="fas fa-dollar-sign"><%= ticket.event_price %></i></h2>
+              <h2 class="card-ticket-pricing">R$ <%= ticket.event_price %></h2>
             </div>
         </div>
         <% end %>
