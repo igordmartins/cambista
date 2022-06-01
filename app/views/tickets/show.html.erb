@@ -9,7 +9,11 @@
   <h2 class="mb-3">R$ <%= @ticket.event_price %></h2>
   <div >
     <% if user_signed_in? %>
-      <%= link_to 'Buy Ticket', new_ticket_order_path(@ticket), class: 'btn btn btn-registrar-navbar' %>
+      <%= link_to 'Comprar ingresso', new_ticket_order_path(@ticket), class: 'btn btn btn-registrar-navbar' %>
     <% end %>
+    <% if @ticket.user == current_user %>
+      <%= link_to 'Editar', edit_ticket_path(@ticket), class: 'btn btn btn-registrar-navbar' %>
+      <%= link_to 'Deletar', ticket_path(@ticket), method: :delete, data: {confirm: "Voce tem certeza que quer apagar?"}, class: 'btn btn btn-registrar-navbar' %>
+      <% end %>
   </div>
 </div>

@@ -24,10 +24,26 @@ class TicketsController < ApplicationController
     end
   end
 
+  def edit
+    @ticket = Ticket.find(params[:id])
+    authorize @ticket
+  end
+
+  def update
+    @ticket = Ticket.find(params[:id])
+    authorize @ticket
+    if @ticket.update(ticket_params)
+      redirect_to @ticket, notice: 'Seu ticket foi atualizado!'
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @ticket = Ticket.find(params[:id])
     @ticket.destroy
     redirect_to tickets_path(@ticket)
+    authorize @ticket
   end
 
   def show
