@@ -8,3 +8,12 @@
 legend ~ div.form-check:first-of-type {
   clear: left;
 }
+
+.container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  margin: 50px auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: (0 -6mm 4mm rgb(158, 177, 241));
+}
