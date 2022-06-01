@@ -1,7 +1,7 @@
 <div class="container ">
   <% @orders.each do |order| %>
     <div class="card-product">
-      <%= image_tag 'afterlife.jpg' %>
+      <%= image_tag (order.ticket.photo.attached? ? cl_image_path(order.ticket.photo.key, crop: :thumb) : asset_path("blank.png")) %>
       <div class="content">
         <div class="description">
           <div class="d-flex justify-content-between">
