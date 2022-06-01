@@ -4,11 +4,11 @@
       <%= image_tag (order.ticket.photo.attached? ? cl_image_path(order.ticket.photo.key, crop: :thumb) : asset_path("blank.png")) %>
       <div class="content">
         <div class="description">
-          <div class="d-flex justify-content-between py-2">
+          <div class="d-flex justify-content-between ">
             <h3><%= order.ticket.event_name %></h3>
             <h3>Data: <%= order.ticket.event_date %></h3>
           </div>
-          <p><%= order.ticket.description %></p>
+          <p><%= order.ticket.description[..300] %>...</p>
         </div>
       </div>
     </div>
