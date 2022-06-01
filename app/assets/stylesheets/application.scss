@@ -12,21 +12,18 @@
 @import "components/index";
 @import "pages/index";
 
-
 body {
-display: flex;
-flex-direction: column;
-height: 100vh;
-
+  // display: flex;
+  // flex-direction: column;
+  // height: 100vh;
 }
 
-
 input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
+input[type="number"] {
+  -moz-appearance: textfield;
+}
