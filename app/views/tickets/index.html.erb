@@ -4,7 +4,7 @@
   <div class="container mt-4 text-end mb-5">
     <%= link_to "Venda seu ingresso", new_ticket_path, class: "btn btn-registrar-navbar" %>
   </div>
-  <div class="cards">
+  <div class="cards mb-3">
     <% if @tickets.length > 0 %>
       <% @tickets.each do |ticket| %>
         <%= link_to ticket_path(ticket), class: "text-decoration-none" do %>
