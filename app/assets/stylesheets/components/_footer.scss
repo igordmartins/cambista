@@ -1,20 +1,44 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 120px;
+}
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  // line-height: 80px; /* Vertically center the text there */
   background: white;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 80px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
-  margin-top: auto;
+  // padding: 0px 30px;
+  color: rgba(0,0,0,0.7);
+
+  font-size: 14px;
+  p {
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    margin-bottom: 5px;
+  }
 }
+
+
 .footer-photos {
   display: flex;
   align-items: center;
-  height: 80px;
+
   img {
-  width: 30px;
-  margin-right: 5px;
+  width: 20px;
+  margin: 0 8px;
+
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   }
 
 }
