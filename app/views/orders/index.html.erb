@@ -1,4 +1,4 @@
-<div class="container ">
+<div class="container mb-3">
   <% @orders.each do |order| %>
     <div class="card-product">
       <%= image_tag (order.ticket.photo.attached? ? cl_image_path(order.ticket.photo.key, crop: :thumb) : asset_path("blank.png")) %>
