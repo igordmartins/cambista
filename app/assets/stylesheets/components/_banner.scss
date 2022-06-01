@@ -1,6 +1,8 @@
 .banner-ticket {
   font-size: 16x;
   height: 500px;
-  background-size: cover;
-  background-position-x: center;
+  // background-size: cover;
+  // background-position-x: center;
+  width: 100%;
+  object-fit: cover;
 }
