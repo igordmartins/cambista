@@ -1,18 +1,24 @@
-<%= image_tag (@ticket.photo.attached? ? cl_image_path(@ticket.photo.key, crop: :thumb) : asset_path("blank.png")), class: "banner-ticket" %>
-<div class="container content-page mt-3">
-  <div class="d-flex justify-content-between mb-5">
-    <h1><%= @ticket.event_name %></h1>
-    <h3>Data: <%= @ticket.event_date %></h3>
-  </div>
-  <p class="mb-5"><%= @ticket.description %></p>
-  <hr class="mb-5">
-  <h2 class="mb-3">R$ <%= @ticket.event_price %></h2>
-  <div >
-    <% if @ticket.user == current_user %>
-      <%= link_to 'Editar', edit_ticket_path(@ticket), class: 'btn btn btn-registrar-navbar' %>
-      <%= link_to 'Deletar', ticket_path(@ticket), method: :delete, data: {confirm: "Voce tem certeza que quer apagar?"}, class: 'btn btn btn-registrar-navbar' %>
-    <% else %>
-      <%= link_to 'Comprar ingresso', new_ticket_order_path(@ticket), class: 'btn btn btn-registrar-navbar' %>
-    <% end %>
+<div class="container content-page mt-5">
+  <div class="row">
+    <div class="img-show col-12 col-lg-6">
+      <%= image_tag (@ticket.photo.attached? ? cl_image_path(@ticket.photo.key, crop: :thumb) : asset_path("blank.png")), class: "banner-ticket" %>
+    </div>
+    <div class="p-5 col-12 col-lg-6">
+      <div class="ml-5 my-5">
+        <p>Data do evento: <%= @ticket.event_date %></p>
+      <hr>
+        <h1 class=""><%= @ticket.event_name.to_s.capitalize %></h1>
+      <p class=""><%= @ticket.description %></p>
+      </div>
+      <h2 class="mb-5">R$ <%= @ticket.event_price %></h2>
+      <div class="d-flex gap-2 justify-content-end">
+        <% if @ticket.user == current_user %>
+          <%= link_to 'Editar', edit_ticket_path(@ticket), class: 'btn btn-registrar-navbar' %>
+          <%= link_to 'Deletar', ticket_path(@ticket), method: :delete, data: {confirm: "Voce tem certeza que quer apagar?"}, class: 'btn btn btn-registrar-navbar' %>
+        <% else %>
+          <%= link_to 'Comprar ingresso', new_ticket_order_path(@ticket), class: 'btn btn-registrar-navbar' %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
