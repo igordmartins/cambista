@@ -1,26 +1,27 @@
 <div class="container my-5">
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80);">
     <h1 class="text-center">Ingressos disponíveis</h1>
-      <%= link_to "Venda seu ingresso", new_ticket_path, class: "btn btn-venda-seu-ingresso" %>
+    <%= link_to "Venda seu ingresso", new_ticket_path, class: "btn btn-venda-seu-ingresso" %>
   </div>
-    <div class="cards my-5">
-      <% if @tickets.length > 0 %>
-        <% @tickets.each do |ticket| %>
-          <%= link_to ticket_path(ticket), class: "text-decoration-none" do %>
-            <div class="card-ticket">
+  <div class="cards my-5">
+    <% if @tickets.length > 0 %>
+      <% @tickets.each do |ticket| %>
+        <%= link_to ticket_path(ticket), class: "text-decoration-none" do %>
+          <div class="card-ticket">
             <%= image_tag (ticket.photo.attached? ? cl_image_path(ticket.photo.key, crop: :thumb) : asset_path("blank.png")) %>
-              <div class="card-ticket-infos">
-                <div>
-                  <h2><%= ticket.event_name %></h2>
-                  <p><strong>Vendido por:</strong> <%= ticket.user.name %> <strong>Data do evento:</strong> <%= ticket.event_date %></p>
-                </div>
-                <h2 class="card-ticket-pricing">R$ <%= ticket.event_price %></h2>
+            <div class="card-ticket-infos">
+              <div>
+                <h2><%= ticket.event_name %></h2>
+                <p><strong>Vendido por:</strong> <%= ticket.user.name %> </p>
+                <p><strong>Data do evento:</strong> <%= ticket.event_date %></p>
               </div>
+              <h2 class="card-ticket-pricing">R$ <%= ticket.event_price %></h2>
+            </div>
           </div>
-          <% end %>
         <% end %>
-      <% else %>
-        <p>Nao há ingressos disponíveis para venda</p>
       <% end %>
-    </div>
+    <% else %>
+      <p>Nao há ingressos disponíveis para venda</p>
+    <% end %>
+  </div>
 </div>
