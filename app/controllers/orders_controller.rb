@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     if @order.save
       @ticket.update(available: false)
-      redirect_to root_path, notice: 'Ticket adiquirido com sucesso!'
+      redirect_to root_path, notice: 'Ticket adquirido com sucesso!'
     else
       render :new
     end
