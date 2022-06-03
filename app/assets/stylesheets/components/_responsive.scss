@@ -43,4 +43,15 @@
     flex-direction: column;
     height: 200px !important;
   }
+
+}
+
+@media (max-width: 1000px) {
+
+  .img-show {
+    margin: 0;
+    .banner-ticket {
+      border-radius: 5px;
+    }
+  }
 }
